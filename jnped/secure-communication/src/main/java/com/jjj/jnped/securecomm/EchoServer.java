@@ -30,9 +30,9 @@ public class EchoServer {
   private String keyPath;
   
   public EchoServer() throws Exception {
-    
+    //打开JSSE的调试日志
     System.setProperty("javax.net.debug", "all");
-    
+    //获取证书的路径
     keyPath = EchoServer.class.getClassLoader().getResource("test.keys").getPath();
     //创建ssl socket 上下文对象
     SSLContext sslContext = createSSLSocketContext();
