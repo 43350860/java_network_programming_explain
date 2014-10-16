@@ -19,9 +19,9 @@ public class EchoClient {
   
   private static final Logger LOGGER = Logger.getLogger("EchoClient");
   
-  private static final String HOST = "10.14.112.40";
+  private static final String HOST = "spanner.d88.alipay.net";
   
-  private static final int PORT = 8000;
+  private static final int PORT = 8456;
   
   private SSLSocket sslSocket;
   
@@ -34,6 +34,7 @@ public class EchoClient {
     
     SocketFactory sslSocketFactory = SSLSocketFactory.getDefault();
     sslSocket = (SSLSocket) sslSocketFactory.createSocket(HOST, PORT);
+    
     LOGGER.info("SSLSocket创建完成");
     String[] supportedCipherSuites = sslSocket.getSupportedCipherSuites();
     sslSocket.setEnabledCipherSuites(supportedCipherSuites);
